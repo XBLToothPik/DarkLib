@@ -35,6 +35,7 @@ namespace Dark.Archive
                 Table = new Table(xMain, Header);
                 EventHandler.OnFileParsed(new EventHandling.ArgHandlers.OnFileParsed(true));
             }
+
             public void Save(Stream xOut)
             {
                 Header.TableSize = 0;
@@ -45,12 +46,6 @@ namespace Dark.Archive
                 Table.Write(xOut, xMain);
             }
 
-            public TableEntry GetEntryByName(string name)
-            {
-                for (int i = 0; i < Table.Entries.Count; i++)
-                    if (Table.Entries[i].Name == name)
-                        return Table.Entries[i];
-                return null;
-            }
+
         }
 }
